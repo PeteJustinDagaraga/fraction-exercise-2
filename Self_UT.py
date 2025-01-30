@@ -19,3 +19,8 @@ def __main__():
     print(Fraction.gcd(10,4))
 
 __main__()
+
+
+a = 0
+b = 1
+print(a or b == 0)

@@ -35,18 +35,17 @@ class Fraction(object):
             self.numerator = None
             self.denominator = None
             
-    def gcd(a, b):
-        #TODO
+    def gcd(a, b, level = 0):
+        if level == 0 and (a == 0 or b == 0):
+            return 0
         if b == 0:
             return a
-        return Fraction.gcd(b,a%b)
+        return Fraction.gcd(b,a%b, level + 1)
 
     def get_numerator(self) -> int:
-        #TODO
         return self.numerator
 
     def get_denominator(self) -> int:
-        #TODO
         return self.denominator
 
     def get_fraction(self):
