@@ -1,8 +1,19 @@
 class Fraction(object):
 
-    def __init__(self, numerator=0, denominator=1):
-        #TODO
+    def __init__(self, *args):
+        numerator = 0
+        denominator = 0
         try:
+            if len(args) == 2:
+                numerator = args[0]
+                denominator = args[1]
+            
+            if len(args) == 1:
+                str_fraction = args[0]
+                str_fraction = str_fraction.strip()
+
+                str_fraction_values = str_fraction.split('/')
+
             self.numerator = numerator
             self.denominator = denominator
 
@@ -14,15 +25,6 @@ class Fraction(object):
                 raise ZeroDivisionError
         except ValueError:
             print("Input not integer")
-
-    def __init__(self, fraction_string: str):
-        #TODO
-        try:
-            actual_fraction = fraction_string.strip()
-            values = actual_fraction.split('/')
-            self.__init__(int(values[0]), int(values[1]))
-        except ValueError:
-            print("Invalid string")
             
     def gcd(a, b):
         #TODO
