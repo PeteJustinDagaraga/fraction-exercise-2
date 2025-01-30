@@ -17,21 +17,24 @@ class Fraction(object):
 
     def __init__(self, fraction_string: str):
         #TODO
-        actual_fraction = fraction_string.strip()
-        values = actual_fraction.split('/')
-        self.__init__(values[0], values[1])
-
+        try:
+            actual_fraction = fraction_string.strip()
+            values = actual_fraction.split('/')
+            self.__init__(int(values[0]), int(values[1]))
+        except ValueError:
+            print("Invalid string")
+            
     def gcd(a, b):
         #TODO
         pass
 
-    def get_numerator(self):
+    def get_numerator(self) -> int:
         #TODO
-        pass
+        return self.numerator
 
-    def get_denominator(self):
+    def get_denominator(self) -> int:
         #TODO
-        pass
+        return self.denominator
 
     def get_fraction(self):
         #TODO
