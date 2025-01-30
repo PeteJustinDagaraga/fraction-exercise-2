@@ -37,7 +37,9 @@ class Fraction(object):
             
     def gcd(a, b):
         #TODO
-        pass
+        if b == 0:
+            return a
+        return Fraction.gcd(b,a%b)
 
     def get_numerator(self) -> int:
         #TODO
