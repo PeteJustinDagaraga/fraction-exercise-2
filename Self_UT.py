@@ -9,14 +9,15 @@ def __main__():
     fr6 = Fraction("2/-5         ")
     notfr = Fraction("lol")
 
-    print(Fraction.gcd(0,1))
-    print(Fraction.gcd(0,0))
-    print(Fraction.gcd(1,0))
-    print(Fraction.gcd(2,1))
-    print(Fraction.gcd(5,7))
-    print(Fraction.gcd(7,5))
-    print(Fraction.gcd(4,10))
-    print(Fraction.gcd(10,4))
+    # print(Fraction.gcd(0,1))
+    # print(Fraction.gcd(0,0))
+    # print(Fraction.gcd(1,0))
+    # print(Fraction.gcd(2,1))
+    # print(Fraction.gcd(5,7))
+    # print(Fraction.gcd(7,5))
+    # print(Fraction.gcd(4,10))
+    # print(Fraction.gcd(10,4))
+    # print(Fraction.gcd(-9,-3))
 
 __main__()
 
