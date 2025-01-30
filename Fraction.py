@@ -9,16 +9,24 @@ class Fraction(object):
                 denominator = args[1]
             
             if len(args) == 1:
-                str_fraction = args[0]
-                str_fraction = str_fraction.strip()
+                if isinstance(args[0],str):
+                    str_fraction = args[0]
+                    str_fraction = str_fraction.strip()
 
-                str_fraction_values = str_fraction.split('/')
+                    str_fraction_values = str_fraction.split('/')
 
-                if len(str_fraction_values) == 2:
-                    numerator = int(str_fraction_values[0])
-                    denominator = int(str_fraction_values[1])
+                    if len(str_fraction_values) == 2:
+                        numerator = int(str_fraction_values[0])
+                        denominator = int(str_fraction_values[1])
+                    elif len(str_fraction_values) == 1:
+                        numerator = int(str_fraction_values[0])
+                        denominator = 1
+                    else:
+                        raise ValueError
                 else:
-                    numerator = int(str_fraction_values[0])
+                    if not isinstance(args[0],int):
+                        raise ValueError
+                    numerator = args[0]
                     denominator = 1
 
             self.numerator = numerator
