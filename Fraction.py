@@ -48,5 +48,15 @@ class Fraction(object):
         return self.denominator
 
     def get_fraction(self):
-        #TODO
-        pass
+        if self.denominator is None or self.denominator == 0:
+            return str(0)
+        if self.denominator == 1:
+            return f'{self.numerator}'
+        
+        remainder = self.numerator % self.denominator
+
+        if remainder == 0:
+            quotient = self.numerator // self.denominator
+            return f'{quotient}'        
+
+        return f'{self.numerator}/{self.denominator}'
