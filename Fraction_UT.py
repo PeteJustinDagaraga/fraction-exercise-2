@@ -53,19 +53,19 @@ class FractionUnitTest(unittest.TestCase):
         self.fraction = Fraction(-2, -4)
         self.assertEqual(self.fraction.get_fraction(), "1/2")
 
-    # def test_fraction_negative_string_inputs(self):
-    #     self.fraction = Fraction("-2/4    ")
-    #     self.assertEqual(self.fraction.get_fraction(), "-1/2")
+    def test_fraction_negative_string_inputs(self):
+        self.fraction = Fraction("-2/4    ")
+        self.assertEqual(self.fraction.get_fraction(), "-1/2")
 
-    #     self.fraction = Fraction("   2/-4")
-    #     self.assertEqual(self.fraction.get_fraction(), "-1/2")
+        self.fraction = Fraction("   2/-4")
+        self.assertEqual(self.fraction.get_fraction(), "-1/2")
 
-    #     self.fraction = Fraction("   -2/-4   ")
-    #     self.assertEqual(self.fraction.get_fraction(), "1/2")
+        self.fraction = Fraction("   -2/-4   ")
+        self.assertEqual(self.fraction.get_fraction(), "1/2")
 
-    # def test_fraction_positive_string_inputs(self):
-    #     self.fraction = Fraction("2/4")
-    #     self.assertEqual(self.fraction.get_fraction(), "1/2")
+    def test_fraction_positive_string_inputs(self):
+        self.fraction = Fraction("2/4")
+        self.assertEqual(self.fraction.get_fraction(), "1/2")
 
 
 if __name__ == '__main__':

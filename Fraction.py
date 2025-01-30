@@ -42,6 +42,8 @@ class Fraction(object):
             print("Input not integer")
             self.numerator = None
             self.denominator = None
+        else:
+            self.__simplify__()
             
     def gcd(a, b, level = 0):
         if level == 0 and (a == 0 or b == 0):
@@ -67,5 +69,11 @@ class Fraction(object):
         if remainder == 0:
             quotient = self.numerator // self.denominator
             return f'{quotient}'        
-
+        
         return f'{self.numerator}/{self.denominator}'
+    
+    def __simplify__(self):
+        fraction_gcd = Fraction.gcd(self.numerator, self.denominator)
+        if fraction_gcd != 0:
+            self.numerator = (int) (self.numerator // fraction_gcd)
+            self.denominator = (int) (self.denominator // fraction_gcd)
