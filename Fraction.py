@@ -5,15 +5,21 @@ class Fraction(object):
         try:
             self.numerator = numerator
             self.denominator = denominator
-        except:
+
+            if not isinstance(numerator, int):
+                raise ValueError
+            if not isinstance(denominator, int):
+                raise ValueError
+            if denominator == 0:
+                raise ZeroDivisionError
+        except ValueError:
             print("Input not integer")
 
     def __init__(self, fraction_string: str):
         #TODO
         actual_fraction = fraction_string.strip()
-        values = actual_fraction.split(/)
-        self.numerator=int(values[0])
-        self.denominator=int(values[1])
+        values = actual_fraction.split('/')
+        self.__init__(values[0], values[1])
 
     def gcd(a, b):
         #TODO
