@@ -14,6 +14,13 @@ class Fraction(object):
 
                 str_fraction_values = str_fraction.split('/')
 
+                if len(str_fraction_values) == 2:
+                    numerator = int(str_fraction_values[0])
+                    denominator = int(str_fraction_values[1])
+                else:
+                    numerator = int(str_fraction_values[0])
+                    denominator = 1
+
             self.numerator = numerator
             self.denominator = denominator
 
@@ -25,6 +32,8 @@ class Fraction(object):
                 raise ZeroDivisionError
         except ValueError:
             print("Input not integer")
+            self.numerator = None
+            self.denominator = None
             
     def gcd(a, b):
         #TODO
