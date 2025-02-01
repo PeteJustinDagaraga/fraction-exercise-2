@@ -70,7 +70,7 @@ class Fraction():
         return numerator, denominator
 
 
-    def gcd(self, a, b, level = 0):
+    def gcd(a, b, level = 0):
         '''
         @brief returns the greatest common denominator of 2 values
         '''
@@ -121,7 +121,7 @@ class Fraction():
         '''
         @brief simplifies the fraction
         '''
-        fraction_gcd = self.gcd(self.numerator, self.denominator)
+        fraction_gcd = Fraction.gcd(self.numerator, self.denominator)
         if fraction_gcd != 0:
             self.numerator = (int) (self.numerator // fraction_gcd)
             self.denominator = (int) (self.denominator // fraction_gcd)
