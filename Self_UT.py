@@ -10,8 +10,7 @@ def __main__():
     fr7 = Fraction('       -5/7        ')
     notfr = Fraction("lol")
     notfr2 = Fraction(1.123)
-    notfr3 = Fraction(5,0)
-
+    # notfr3 = Fraction(5,0)
 
     print(fr.get_fraction())
     print(fr2.get_fraction())
@@ -22,7 +21,7 @@ def __main__():
     print(fr7.get_fraction())
     print(notfr.get_fraction())
     print(notfr2.get_fraction())
-    print(notfr3.get_fraction())
+    # print(notfr3.get_fraction())
 
     # print(Fraction.gcd(0,0))
     # print(Fraction.gcd(1,0))
@@ -34,8 +33,3 @@ def __main__():
     # print(Fraction.gcd(-9,-3))
 
 __main__()
-
-
-a = 0
-b = 1
-print(a or b == 0)
