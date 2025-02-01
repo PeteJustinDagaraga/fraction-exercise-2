@@ -1,30 +1,36 @@
 class Fraction():
+    '''
+    @author: Lorenzo Duenas, Alinus Abuke, Pete Justin Dagaraga
 
+    '''
     def __init__(self, *args):
+        '''
+        @brief generates a fraction based on input values
+        '''
+
         numerator = 0
-        denominator = 0
+        denominator = 1
 
         try:
             if len(args) == 2:
                 numerator = args[0]
                 denominator = args[1]
-                
+
             if len(args) == 1:
                 if isinstance(args[0],str):
                     numerator, denominator = self.__parse_string__(args[0])
 
                 else:
-                    if isinstance(args[0],int):
+                    if not isinstance(args[0],int):
                         raise ValueError
                     numerator = args[0]
-                    denominator = 1
 
             self.numerator = numerator
             self.denominator = denominator
 
             if not isinstance(numerator, int):
                 raise ValueError
-            
+
             if not isinstance(denominator, int):
                 raise ValueError
 
@@ -41,6 +47,9 @@ class Fraction():
 
 
     def __parse_string__(self, str_fraction):
+        '''
+        @brief returns numerator and denominator from input string
+        '''
 
         str_fraction = str_fraction.strip()
         str_fraction_values = str_fraction.split('/')
@@ -61,7 +70,10 @@ class Fraction():
         return numerator, denominator
 
 
-    def gcd(a, b, level = 0):
+    def gcd(self, a, b, level = 0):
+        '''
+        @brief returns the greatest common denominator of 2 values
+        '''
 
         if level == 0 and (a == 0 or b == 0):
             return 0
@@ -73,17 +85,23 @@ class Fraction():
 
 
     def get_numerator(self) -> int:
-
+        '''
+        @brief returns the numerator of the fraction
+        '''
         return self.numerator
 
 
     def get_denominator(self) -> int:
-
+        '''
+        @brief returns the denominator of the fraction
+        '''
         return self.denominator
 
 
     def get_fraction(self):
-
+        '''
+        @brief returns the fraction as a string and in lowest form
+        '''
         if self.__no_denominator__(self.denominator):
             return str(0)
 
@@ -100,11 +118,17 @@ class Fraction():
 
 
     def __simplify__(self):
-
-        fraction_gcd = Fraction.gcd(self.numerator, self.denominator)
+        '''
+        @brief simplifies the fraction
+        '''
+        fraction_gcd = self.gcd(self.numerator, self.denominator)
         if fraction_gcd != 0:
             self.numerator = (int) (self.numerator // fraction_gcd)
             self.denominator = (int) (self.denominator // fraction_gcd)
 
     def __no_denominator__(self, denominator_value):
+        '''
+        @brief returns true if the fraction is invalid or the
+        denominator is zero
+        '''
         return denominator_value is None or denominator_value == 0
