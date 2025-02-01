@@ -58,7 +58,7 @@ class Fraction(object):
     def get_denominator(self) -> int:
         return self.denominator
 
-    def get_fraction(self):
+    def get_fraction(self):    
         if self.denominator is None or self.denominator == 0:
             return str(0)
         if self.denominator == 1:
