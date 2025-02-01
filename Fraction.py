@@ -2,6 +2,20 @@ class Fraction():
     '''
     @author: Lorenzo Duenas, Alinus Abuke, Pete Justin Dagaraga
 
+    "
+    We have not discussed the Python language code in our program with
+    anyone other than our instructor or the teaching assistants assigned
+    to this course.
+
+    We have not used Python language code obtained from another student, or
+    any other unauthorized source, either modified or unmodified.
+
+    If any Python language code or documentation used in our program
+    was obtained from another source, such as a textbook or course notes,
+    that has been clearly noted with a proper citation in the comments
+    of our program.
+    "
+
     '''
     def __init__(self, *args):
         '''
@@ -28,10 +42,7 @@ class Fraction():
             self.numerator = numerator
             self.denominator = denominator
 
-            if not isinstance(numerator, int):
-                raise ValueError
-
-            if not isinstance(denominator, int):
+            if self.__are_integers__(self.numerator,self.denominator):
                 raise ValueError
 
             if denominator == 0:
@@ -44,6 +55,13 @@ class Fraction():
 
         else:
             self.__simplify__()
+
+    def __are_integers__(self, value1, value2):
+        '''
+        @brief returns True if either value is not an Integer
+        '''
+
+        return not isinstance(value1, int) or not isinstance(value2, int)
 
 
     def __parse_string__(self, str_fraction):
@@ -125,6 +143,7 @@ class Fraction():
         if fraction_gcd != 0:
             self.numerator = (int) (self.numerator // fraction_gcd)
             self.denominator = (int) (self.denominator // fraction_gcd)
+
 
     def __no_denominator__(self, denominator_value):
         '''
